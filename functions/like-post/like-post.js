@@ -3,8 +3,6 @@ exports.handler = async (event, context) => {
   const path = event.path.replace(/\.netlify\/functions\/[^\/]+/, "")
   const segments = path.split("/").filter(e => e)
 
-  console.log(process.env.FAUNADB_SERVER_SECRET)
-
   switch (event.httpMethod) {
     case "GET":
       // e.g. GET /.netlify/functions/fauna-crud/123456
